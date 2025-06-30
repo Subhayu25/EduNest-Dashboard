@@ -17,7 +17,6 @@ df = load_data()
 
 # Sidebar Filters
 with st.sidebar:
-    st.image("https://i.imgur.com/xmGdz4I.png", width=220)
     st.title("EduNest Filters")
     st.markdown("Use filters to interactively explore the dashboard.")
     region = st.multiselect("📍 Region", df["Region"].unique(), default=df["Region"].unique())
@@ -91,7 +90,7 @@ with tab3:
     st.plotly_chart(fig)
 
     st.markdown("#### 🎯 Interest Score vs Satisfaction")
-    fig = px.scatter(filtered_df, x="Interest_Score", y="Satisfaction_Score", color="Course_Enrolled", trendline="ols")
+    fig = px.scatter(filtered_df, x="Interest_Score", y="Satisfaction_Score", color="Course_Enrolled")
     st.plotly_chart(fig)
 
     st.markdown("#### 👥 Referral Count Impact")
